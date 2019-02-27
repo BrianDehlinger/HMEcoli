@@ -16,10 +16,12 @@ Biopython
 
 Python(version 3 or greater) (3.6.7 used for this project)
 
-Steps to Run:
+Highly Recommended to use a Tmux session or use Nohup so that the jobs finish. 
 
+Steps to Run:
 1) Download all of the files or git clone into a directory of choice via the terminal. You can use cd to change into the directory you would like to run the program in.
 2) Format your data file containing rows with the organism name, the ftp location of the genome, the ftp location of the transcriptome, and the ftp location of the featureCount file. All of these attributes should be seperated by a single space and in the order described.
+2.5) HIGHLY RECOMMENDED: Make sure you are in the working directory you want to run everything in. Type tmux. This will attach you to a tmux session. 
 3) The program takes 3 input parameters. The path to the data file. A genus to use in Prokka and a name for an output folder.
 	In order to run the program here is what the command should look something like this: **Test.txt is your own data file** **Escherichia is the genus** **Dehlinger_Brian will be an output directory in the current working directory**
 
