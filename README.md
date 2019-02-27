@@ -7,9 +7,13 @@ This program is part of a pipeline to identify significant changes in expression
 In order to run this program the following must be installed on a Linux Server. The following dependencies are needed:
 
 TopHat2 
+
 Cufflinks v2.2.1
+
 Prokka 1.13
+
 Biopython 
+
 Python(version 3 or greater) (3.6.7 used for this project)
 
 Steps to Run:
