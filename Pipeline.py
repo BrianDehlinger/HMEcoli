@@ -73,7 +73,7 @@ def contigsBP(genomeFile, organism):
 
 ## This function calls Prokka with the parameter genus specified in the argument. The output directory is the organism name in the first column of the file.
 def doProkka(organism, genomeName):
-	print("prokka --outdir  " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
+	os.system("prokka --outdir  " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
 	file.write("prokka --outdir " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
 
 ##This will output the assembly data summary that prokka made to the log file and note any discrepanices between the tRNA value and the CDS value relative to the RefSeq annotation specified in the input file. This is written to the log file.
