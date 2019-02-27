@@ -37,3 +37,11 @@ Steps to Run:
 
 The Test.txt file is an example of what input to the program should look like. Each line is a sample. The columns are seperated by a single space. The first column contains the name of the Organism/Sample(for example HM27). The second column is the location of the genome fasta file for a bacterial genome.
 
+##
+
+Future goals:
+
+Use Stringtie and compare to efficiency of Cufflinks
+Use HISAT2 and compare to efficiency of Tophat2
+
+
