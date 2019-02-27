@@ -1,20 +1,21 @@
 # HMEcoli
 The repository for the tuxedo package analysis of HM27, HM46, HM65, and HM69 Ecoli strains
 
+## Note this software's genus flag must be one of the genus in your database of genera in Prokka. Details are found in Prokka's doucmentation.
 
 This program is part of a pipeline to identify significant changes in expression between bacterial strains. NCBI's assemblies for these strains are retrieved via the NCBI ftp server using wget. These assemblies are annotated using Prokka to determine what genes could be expressed. Transcriptome data was obtained from NCBI's SRA database again through the ftp server using wget on linux. TopHat is used to map the reads of a strain to that strain's genome. Cufflinks determines the expression of the genes. 
 
 In order to run this program the following must be installed on a Linux Server. The following dependencies are needed:
 
-TopHat2 
+TopHat2 https://ccb.jhu.edu/software/tophat/index.shtml
 
-Cufflinks v2.2.1
+Cufflinks v2.2.1 http://cole-trapnell-lab.github.io/cufflinks/
 
-Prokka 1.13
+Prokka 1.13 http://www.vicbioinformatics.com/software.prokka.shtml
 
-Biopython 
+Biopython https://biopython.org/
 
-Python(version 3 or greater) (3.6.7 used for this project)
+Python(version 3 or greater) (3.6.7 used for this project) https://www.python.org/downloads/
 
 Highly Recommended to use a Tmux session or use Nohup so that the jobs finish. 
 
@@ -25,11 +26,11 @@ Steps to Run:
 3) The program takes 3 input parameters. The path to the data file. A genus to use in Prokka and a name for an output folder.
 	In order to run the program here is what the command should look something like this: **Test.txt is your own data file** **Escherichia is the genus** **Dehlinger_Brian will be an output directory in the current working directory**
 
-	python pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
+	python Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
 
 	Or if your machine uses the name python3 for python version 3 or greater.
 	
-	python3 pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
+	python3 Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
 
 
 ## How to format your data file(Test.txt):
