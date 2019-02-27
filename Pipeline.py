@@ -168,7 +168,8 @@ with open("assemblies.txt", 'w+') as fileTwo:
 		fileTwo.write("/n")
 		superstring = superstring +  organism.name + ".sorted.bam "
 
-os.system("cuffmerge -p 2 assemblies.txt") 
-os.system(superstring)
+## The following produce an error and have been commented out. This will be fixed in a future release. 
+## os.system("cuffmerge -p 2 assemblies.txt") 
+## os.system(superstring)
 
 file.close()
