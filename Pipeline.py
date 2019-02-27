@@ -11,7 +11,6 @@ from Bio import SeqIO
 parser = argparse.ArgumentParser()
 parser.add_argument('file')
 parser.add_argument('genus')
-parser.add_argument('folderOutput')
 args = parser.parse_args()
 
 
@@ -42,8 +41,8 @@ for organism in rawData:
 	
 ## Makes a directory in the current working directory and switches into it as the current working directory for all of the following code.
 
-os.system("mkdir " + args.folderOutput)
-os.chdir(args.folderOutput)
+os.system("mkdir Dehlinger_Brian")
+os.chdir("Dehlinger_Brian")
 
 
 ## For every organism in the file it will get all of the data necessary for the pipeline to work
