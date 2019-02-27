@@ -23,14 +23,14 @@ Steps to Run:
 1) Download all of the files or git clone into a directory of choice via the terminal. You can use cd to change into the directory you would like to run the program in.
 2) Format your data file containing rows with the organism name, the ftp location of the genome, the ftp location of the transcriptome, and the ftp location of the featureCount file. All of these attributes should be seperated by a single space and in the order described.
 2.5) HIGHLY RECOMMENDED: Make sure you are in the working directory you want to run everything in. Type tmux. This will attach you to a tmux session. Then run the following. return to your native terminal by pressing Ctrl+b then d. When you want to see what happens in that terminal again type tmux attach -t 0(or 1 or 2 or 3 and so forth depending on how many other sessions of tmux you have open and which session this is).
-3) The program takes 3 input parameters. The path to the data file. A genus to use in Prokka and a name for an output folder.
-	In order to run the program here is what the command should look something like this: **Test.txt is your own data file** **Escherichia is the genus** **Dehlinger_Brian will be an output directory in the current working directory**
+3) The program takes 2 input parameters. The path to the data file. A genus to use in Prokka. 
+	In order to run the program here is what the command should look something like this: **Test.txt is your own data file** **Escherichia is the genus** 
 
-	python Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
+	python Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia 
 
 	Or if your machine uses the name python3 for python version 3 or greater.
 	
-	python3 Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia Dehlinger_Brian
+	python3 Pipeline.py C:/Users/Documents/Brian/Test.txt Escherichia 
 
 
 ## How to format your data file(Test.txt):
