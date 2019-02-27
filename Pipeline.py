@@ -45,11 +45,13 @@ for organism in rawData:
 os.system("mkdir " + args.folderOutput)
 os.chdir(args.folderOutput)
 
+
 ## For every organism in the file it will get all of the data necessary for the pipeline to work
 for organism in listOfOrganisms:
 	os.system("wget " + organism.genomeFTP)
 	os.system("wget " + organism.featureFTP)
 	os.system("wget " + organism.transcriptomeFTP)
+
 
 ## Unzips everything in the directory.
 os.system('gunzip *.gz')
@@ -65,13 +67,13 @@ def contigsBP(genomeFile, organism):
 		countContig += 1 
 		lengthOfContig = len(str(seq_record.seq))
 		if (lengthOfContig > 1000):
-			countContig += lengthOfContig
+			countBP += lengthOfContig
 	file.write("There are " + str(countContig) + " contigs in the assembly " + organism.name + "\n")
 	file.write("There are " + str(countBP) + " bp in the assembly " + organism.name + "\n")
 
 ## This function calls Prokka with the parameter genus specified in the argument. The output directory is the organism name in the first column of the file.
 def doProkka(organism, genomeName):
-	os.system("prokka --outdir  " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
+	print("prokka --outdir  " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
 	file.write("prokka --outdir " + organism.name + " " + "--usegenus --genus " + args.genus + " " + genomeName +"\n")
 
 ##This will output the assembly data summary that prokka made to the log file and note any discrepanices between the tRNA value and the CDS value relative to the RefSeq annotation specified in the input file. This is written to the log file.
@@ -162,12 +164,11 @@ with open("assemblies.txt", 'w+') as fileTwo:
 		getDifferences(organism.name, featureName)
 		fastQ(organism, sraName)
 		topHatCuffLinks(organism.name)
-		with open("assemblies.txt", 'w+') as fileTwo:
-			fileTwo.write("./" + organism.name + "clOut/transcripts.gtf")
-			fileTwo.write("/n")
-		os.system("cuffmerge -p 2 assemblies.txt")
+		fileTwo.write("./" + organism.name + "clOut/transcripts.gtf")
+		fileTwo.write("/n")
 		superstring = superstring +  organism.name + ".sorted.bam "
 
+os.system("cuffmerge -p 2 assemblies.txt") 
 os.system(superstring)
 
 file.close()
